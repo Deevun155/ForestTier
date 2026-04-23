@@ -1,0 +1,14 @@
+# Ignore the raw Harmonix IP and extracted files
+data_hmx/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore OS system files
+.DS_Store
+Thumbs.db
+
+# Ignore virtual environments (unused for now)
+venv/
+env/
