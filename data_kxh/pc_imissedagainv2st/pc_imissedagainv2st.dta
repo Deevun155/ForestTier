@@ -1,0 +1,138 @@
+(
+   'pc_imissedagainv2'
+   (
+      'name'
+      "I Missed Again"
+   )
+   (
+      'artist'
+      "Phil Collins"
+   )
+   ('master' 1)
+   (
+      'song'
+      (
+         'name'
+         "songs/pc_imissedagainv2st/pc_imissedagainv2st"
+      )
+      (
+         'tracks_count'
+         (2 2 2 2 2 2)
+      )
+      (
+         'tracks'
+         (
+            (
+               'drum'
+               (0 1)
+            )
+            (
+               'bass'
+               (2 3)
+            )
+            (
+               'guitar'
+               (4 5)
+            )
+            (
+               'vocals'
+               (6 7)
+            )
+            (
+               'keys'
+               (8 9)
+            )
+         )
+      )
+      (
+         'pans'
+         (-1.00 1.00 -1.00 1.00 -1.00 1.00 -1.00 1.00 -1.00 1.00 -1.00 1.00)
+      )
+      (
+         'vols'
+         (0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00)
+      )
+      (
+         'cores'
+         (-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1)
+      )
+      ('vocal_parts' 2)
+      (
+         'drum_solo'
+         (
+            'seqs'
+            ('kick.cue' 'snare.cue' 'tom1.cue' 'tom2.cue' 'crash.cue')
+         )
+      )
+      (
+         'drum_freestyle'
+         (
+            'seqs'
+            ('kick.cue' 'snare.cue' 'hat.cue' 'ride.cue' 'crash.cue')
+         )
+      )
+      (mute_volume -15)
+      (mute_volume_vocals -12)
+      (hopo_threshold 170)
+   )
+   ('song_scroll_speed' 2300)
+   (
+      'bank'
+      "sfx/tambourine_bank.milo"
+   )
+   (drum_bank sfx/kit03_bank.milo)
+   ('anim_tempo' 32)
+   ('song_length' 227967)
+   ('preview' 85000 103000)
+   (
+      'rank'
+   ('drum' 394)
+   ('guitar' 145)
+   ('bass' 125)
+   ('vocals' 1)
+   ('keys' 307)
+   ('real_keys' 337)
+   ('band' 230)
+   )
+   ('genre' 'poprock')
+   ('vocal_gender' 'male')
+   ('version' 30)
+   ('format' 10)
+   ('album_art' 1)
+   ('year_released' 1981)
+   ('rating' 1)
+   ('sub_genre' 'subgenre_softrock')
+   ('song_id' 2139619675)
+   (solo (keys))
+   ('tuning_offset_cents' 0)
+   ('guide_pitch_volume' -3.00)
+   ('game_origin' 'ugc_plus')
+   (band_fail_cue band_fail_vintage_keys.cue)
+   ('encoding' 'latin1')
+   (
+      'album_name'
+      "Face Value"
+   )
+   ('album_track_number' 7)
+   (author "Deevun155")
+   (vocal_tonic_note 9)
+   (song_tonality 1)
+
+;DO NOT EDIT THE FOLLOWING LINES MANUALLY
+;Created using Magma: Rok On Edition v4.0.3
+;Song authored by Deevun155
+;Song=I Missed Again
+;CustomID=pc_imissedagainv2
+;Language(s)=English,
+;Karaoke=0
+;Multitrack=0
+;DIYStems=0
+;PartialMultitrack=0
+;UnpitchedVocals=0
+;Convert=0
+;2xBass=0
+;RhythmKeys=0
+;RhythmBass=0
+;CATemh=0
+;ExpertOnly=0
+)

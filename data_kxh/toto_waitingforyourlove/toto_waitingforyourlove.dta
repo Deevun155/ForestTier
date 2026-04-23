@@ -1,0 +1,130 @@
+(
+   'toto_waitingforyourlove_r'
+   (
+      'name'
+      "Waiting for Your Love"
+   )
+   (
+      'artist'
+      "Toto"
+   )
+   ('master' 1)
+   (
+      'song'
+      (
+         'name'
+         "songs/toto_waitingforyourlove/toto_waitingforyourlove"
+      )
+      (
+         'tracks_count'
+         (6 2 2 2 2 2)
+      )
+      (
+         'tracks'
+         (
+            (
+               'drum'
+               (0 1 2 3 4 5)
+            )
+            (
+               'bass'
+               (6 7)
+            )
+            (
+               'guitar'
+               (8 9)
+            )
+            (
+               'vocals'
+               (10 11)
+            )
+            (
+               'keys'
+               (12 13)
+            )
+         )
+      )
+      (
+         'pans'
+         (-1.00 1.00 -1.00 1.00 -1.00 1.00 -1.00 1.00 -1.00 1.00 -1.00 1.00 -1.00 1.00 -1.00 1.00)
+      )
+      (
+         'vols'
+         (0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00)
+      )
+      (
+         'cores'
+         (-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1)
+      )
+      ('vocal_parts' 3)
+      (
+         'drum_solo'
+         (
+            'seqs'
+            ('kick.cue' 'snare.cue' 'tom1.cue' 'tom2.cue' 'crash.cue')
+         )
+      )
+      (
+         'drum_freestyle'
+         (
+            'seqs'
+            ('kick.cue' 'snare.cue' 'hat.cue' 'ride.cue' 'crash.cue')
+         )
+      )
+      (mute_volume -50)
+      (mute_volume_vocals -12)
+      (hopo_threshold 170)
+   )
+   ('song_scroll_speed' 2300)
+   (
+      'bank'
+      "sfx/tambourine_bank.milo"
+   )
+   (drum_bank sfx/kit03_bank.milo)
+   ('anim_tempo' 32)
+   ('song_length' 276440)
+   ('preview' 60000 90000)
+   (
+      'rank'
+      ('drum' 178)
+      ('guitar' 1)
+      ('bass' 228)
+      ('vocals' 279)
+      ('keys' 385)
+      ('real_keys' 385)
+      ('band' 267)
+   )
+   ('genre' 'rbsoulfunk')
+   ('vocal_gender' 'male')
+   ('version' 30)
+   ('format' 10)
+   ('album_art' 1)
+   ('year_released' 1982)
+   ('rating' 1)
+   ('sub_genre' 'subgenre_disco')
+   ('song_id' 1798000029)
+   (solo (keys))
+   ('tuning_offset_cents' 0)
+   ('guide_pitch_volume' -3.00)
+   ('game_origin' 'ugc_plus')
+   ('encoding' 'latin1')
+   (
+      'album_name'
+      "Toto IV"
+   )
+   ('album_track_number' 9)
+
+;DO NOT EDIT THE FOLLOWING LINES MANUALLY
+;Created using Magma: C3 Roks Edition v3.3.5
+;Song authored by Deevun39
+;Song=Waiting for Your Love
+;Language(s)=English,
+;Karaoke=0
+;Multitrack=1
+;Convert=0
+;2xBass=0
+;RhythmKeys=0
+;RhythmBass=0
+;CATemh=0
+;ExpertOnly=0
+)

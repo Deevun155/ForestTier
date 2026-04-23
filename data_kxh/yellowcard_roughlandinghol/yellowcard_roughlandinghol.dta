@@ -1,0 +1,137 @@
+(
+   'yellowcard_roughlandingho'
+   (
+      'name'
+      "Rough Landing, Holly"
+   )
+   (
+      'artist'
+      "Yellowcard"
+   )
+   ('master' 1)
+   (
+      'song'
+      (
+         'name'
+         "songs/yellowcard_roughlandinghol/yellowcard_roughlandinghol"
+      )
+      (
+
+         (2 2 2 2 2 2 2)
+      )
+      (
+         'tracks'
+         (
+            (
+               'drum'
+               (0 1)
+            )
+            (
+               'bass'
+               (2 3)
+            )
+            (
+               'guitar'
+               (4 5)
+            )
+            (
+               'vocals'
+               (6 7)
+            )
+            (
+               'keys'
+               (8 9)
+            )
+         )
+      )
+      (
+         'pans'
+         (-1.00 1.00 -1.00 1.00 -1.00 1.00 -1.00 1.00 -1.00 1.00 -1.00 1.00 -2.50 2.50)
+      )
+      (
+         'vols'
+         (-1.00 -1.00 -4.00 -4.00 -4.00 -4.00 -4.00 -4.00 -4.00 -4.00 -4.00 -4.00 -4.5 -4.5)
+      )
+      (
+         'cores'
+         (-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1)
+      )
+   ('crowd_channels' 12 13)
+      ('vocal_parts' 2)
+      (
+         'drum_solo'
+         (
+            'seqs'
+            ('kick.cue' 'snare.cue' 'tom1.cue' 'tom2.cue' 'crash.cue')
+         )
+      )
+      (
+         'drum_freestyle'
+         (
+            'seqs'
+            ('kick.cue' 'snare.cue' 'hat.cue' 'ride.cue' 'crash.cue')
+         )
+      )
+      (mute_volume -15)
+      (mute_volume_vocals -12)
+      (hopo_threshold 170)
+   )
+   ('song_scroll_speed' 2300)
+   (
+      'bank'
+      "sfx/tambourine_bank.milo"
+   )
+   (drum_bank sfx/kit01_bank.milo)
+   ('anim_tempo' 64)
+   ('song_length' 218344)
+   ('preview' 50000 81000)
+   (
+      'rank'
+   ('drum' 435)
+   ('guitar' 196)
+   ('bass' 111)
+   ('vocals' 162)
+   ('keys' 136)
+   ('real_keys' 136)
+   ('band' 215)
+   )
+   ('genre' 'emo')
+   ('vocal_gender' 'male')
+   ('version' 30)
+   ('format' 10)
+   ('album_art' 1)
+   ('year_released' 2006)
+   ('rating' 1)
+   ('sub_genre' 'subgenre_emo')
+   ('song_id' 2132281739)
+   ('tuning_offset_cents' 0)
+   ('guide_pitch_volume' -3.00)
+   ('game_origin' 'ugc_plus')
+   (band_fail_cue band_fail_rock_keys.cue)
+   ('encoding' 'latin1')
+   (
+      'album_name'
+      "Lights and Sounds"
+   )
+   ('album_track_number' 6)
+   (author "Deevun155")
+   (vocal_tonic_note 4)
+   (song_tonality 0)
+
+;DO NOT EDIT THE FOLLOWING LINES MANUALLY
+;Created using Magma: Rok On Edition v4.0.3
+;Song authored by Deevun155
+;Song=Rough Landing, Holly
+;Language(s)=English,
+;Karaoke=0
+;Multitrack=0
+;DIYStems=1
+;PartialMultitrack=0
+;UnpitchedVocals=0
+;Convert=0
+;2xBass=0
+;RhythmKeys=0
+;RhythmBass=0
+;CATemh=0
+;ExpertOnly=0
+)

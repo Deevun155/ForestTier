@@ -1,0 +1,132 @@
+(
+   'db_somebodyupthereST_rb3c'
+   (
+      'name'
+      "Somebody Up There Likes Me"
+   )
+   (
+      'artist'
+      "David Bowie"
+   )
+   ('master' 1)
+   (
+      'song'
+      (
+         'name'
+         "songs/db_somebodyuptherest/db_somebodyuptherest"
+      )
+      (
+         'tracks_count'
+         (2 1 1 1 1 2)
+      )
+      (
+         'tracks'
+         (
+            (
+               'drum'
+               (0 1)
+            )
+            (
+               'bass'
+               (2)
+            )
+            (
+               'guitar'
+               (3)
+            )
+            (
+               'vocals'
+               (4)
+            )
+            (
+               'keys'
+               (5)
+            )
+         )
+      )
+      (
+         'pans'
+         (-1.00 1.00 0.00 0.00 0.00 0.00 -1.00 1.00)
+      )
+      (
+         'vols'
+         (0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00)
+      )
+      (
+         'cores'
+         (-1 -1 -1 -1 -1 -1 -1 -1)
+      )
+      ('vocal_parts' 3)
+      (
+         'drum_solo'
+         (
+            'seqs'
+            ('kick.cue' 'snare.cue' 'tom1.cue' 'tom2.cue' 'crash.cue')
+         )
+      )
+      (
+         'drum_freestyle'
+         (
+            'seqs'
+            ('kick.cue' 'snare.cue' 'hat.cue' 'ride.cue' 'crash.cue')
+         )
+      )
+      (mute_volume -15)
+      (mute_volume_vocals -12)
+      (hopo_threshold 90)
+   )
+   ('song_scroll_speed' 2300)
+   (
+      'bank'
+      "sfx/handclap_bank.milo"
+   )
+   (drum_bank sfx/kit03_bank.milo)
+   ('anim_tempo' 16)
+   ('song_length' 402371)
+   ('preview' 251000 281000)
+   (
+      'rank'
+      ('drum' 151)
+      ('guitar' 176)
+      ('bass' 135)
+      ('vocals' 427)
+      ('keys' 327)
+      ('real_keys' 269)
+      ('band' 267)
+   )
+   ('genre' 'glam')
+   ('vocal_gender' 'male')
+   ('version' 30)
+   ('format' 10)
+   ('album_art' 1)
+   ('year_released' 1975)
+   ('rating' 1)
+   ('sub_genre' 'subgenre_glam')
+   ('song_id' 1798000042)
+   (solo (keys vocal_percussion))
+   ('tuning_offset_cents' 0)
+   ('guide_pitch_volume' -3.00)
+   ('game_origin' 'ugc_plus')
+   ('encoding' 'latin1')
+   (
+      'album_name'
+      "Young Americans"
+   )
+   ('album_track_number' 5)
+   (vocal_tonic_note 11)
+   (song_tonality 0)
+
+;DO NOT EDIT THE FOLLOWING LINES MANUALLY
+;Created using Magma: C3 Roks Edition v3.3.5
+;Song authored by Deevun155
+;Song=Somebody Up There Likes Me
+;Language(s)=English,
+;Karaoke=0
+;Multitrack=0
+;Convert=0
+;2xBass=0
+;RhythmKeys=0
+;RhythmBass=0
+;CATemh=0
+;ExpertOnly=0
+)

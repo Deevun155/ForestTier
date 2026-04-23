@@ -1,0 +1,137 @@
+(
+   'jb_livinginamericaST_rb3c'
+   (
+      'name'
+      "Living in America"
+   )
+   (
+      'artist'
+      "James Brown"
+   )
+   ('master' 1)
+   (
+      'song'
+      (
+         'name'
+         "songs/jb_livinginamericast/jb_livinginamericast"
+      )
+      (
+         'tracks_count'
+         (2 1 2 2 2 2)
+      )
+      (
+         'tracks'
+         (
+            (
+               'drum'
+               (0 1)
+            )
+            (
+               'bass'
+               (2)
+            )
+            (
+               'guitar'
+               (3 4)
+            )
+            (
+               'vocals'
+               (5 6)
+            )
+            (
+               'keys'
+               (7 8)
+            )
+         )
+      )
+      (
+         'pans'
+         (-1.00 1.00 0.00 -1.00 1.00 -1.00 1.00 -1.00 1.00 -1.00 1.00)
+      )
+      (
+         'vols'
+         (0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00)
+      )
+      (
+         'cores'
+         (-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1)
+      )
+      ('vocal_parts' 3)
+      (
+         'drum_solo'
+         (
+            'seqs'
+            ('kick.cue' 'snare.cue' 'tom1.cue' 'tom2.cue' 'crash.cue')
+         )
+      )
+      (
+         'drum_freestyle'
+         (
+            'seqs'
+            ('kick.cue' 'snare.cue' 'hat.cue' 'ride.cue' 'crash.cue')
+         )
+      )
+      (mute_volume -15)
+      (mute_volume_vocals -12)
+      (hopo_threshold 170)
+   )
+   ('song_scroll_speed' 2300)
+   (
+      'bank'
+      "sfx/handclap_bank.milo"
+   )
+   (drum_bank sfx/kit01_bank.milo)
+   ('anim_tempo' 32)
+   ('song_length' 288504)
+   ('preview' 65000 95000)
+   (
+      'rank'
+   ('drum' 223)
+   ('guitar' 303)
+   ('bass' 213)
+   ('vocals' 506)
+   ('keys' 316)
+   ('real_keys' 334)
+   ('band' 274)
+   )
+   ('genre' 'rbsoulfunk')
+   ('vocal_gender' 'male')
+   ('version' 30)
+   ('format' 10)
+   ('album_art' 1)
+   ('year_released' 1985)
+   ('rating' 1)
+   ('sub_genre' 'subgenre_funk')
+   ('song_id' 2132221506)
+   (solo (keys))
+   ('tuning_offset_cents' 0)
+   ('guide_pitch_volume' -3.00)
+   ('game_origin' 'ugc_plus')
+   (band_fail_cue band_fail_vintage_keys.cue)
+   ('encoding' 'latin1')
+   (
+      'album_name'
+      "Rocky IV: Original Motion Picture Soundtrack"
+   )
+   ('album_track_number' 6)
+   (author "Deevun155")
+   (vocal_tonic_note 2)
+   (song_tonality 0)
+
+;DO NOT EDIT THE FOLLOWING LINES MANUALLY
+;Created using Magma: Rok On Edition v4.0.3
+;Song authored by Deevun155
+;Song=Living in America
+;Language(s)=English,
+;Karaoke=0
+;Multitrack=0
+;DIYStems=0
+;PartialMultitrack=0
+;UnpitchedVocals=0
+;Convert=0
+;2xBass=0
+;RhythmKeys=0
+;RhythmBass=0
+;CATemh=0
+;ExpertOnly=0
+)

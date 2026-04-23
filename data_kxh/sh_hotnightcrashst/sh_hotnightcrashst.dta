@@ -1,0 +1,127 @@
+(
+   'sh_hotnightcrashST'
+   (
+      'name'
+      "Hot Night Crash"
+   )
+   (
+      'artist'
+      "Sahara Hotnights"
+   )
+   ('master' 1)
+   (
+      'song'
+      (
+         'name'
+         "songs/sh_hotnightcrashst/sh_hotnightcrashst"
+      )
+      (
+         'tracks_count'
+         (2 1 2 2 0 2)
+      )
+      (
+         'tracks'
+         (
+            (
+               'drum'
+               (0 1)
+            )
+            (
+               'bass'
+               (2)
+            )
+            (
+               'guitar'
+               (3 4)
+            )
+            (
+               'vocals'
+               (5 6)
+            )
+         )
+      )
+      (
+         'pans'
+         (-1.00 1.00 0.00 -1.00 1.00 -1.00 1.00 -1.00 1.00)
+      )
+      (
+         'vols'
+         (0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00)
+      )
+      (
+         'cores'
+         (-1 -1 -1 -1 -1 -1 -1 -1 -1)
+      )
+      ('vocal_parts' 3)
+      (
+         'drum_solo'
+         (
+            'seqs'
+            ('kick.cue' 'snare.cue' 'tom1.cue' 'tom2.cue' 'crash.cue')
+         )
+      )
+      (
+         'drum_freestyle'
+         (
+            'seqs'
+            ('kick.cue' 'snare.cue' 'hat.cue' 'ride.cue' 'crash.cue')
+         )
+      )
+      (mute_volume -15)
+      (mute_volume_vocals -12)
+      (hopo_threshold 170)
+   )
+   ('song_scroll_speed' 2300)
+   (
+      'bank'
+      "sfx/tambourine_bank.milo"
+   )
+   (drum_bank sfx/kit01_bank.milo)
+   ('anim_tempo' 64)
+   ('song_length' 166807)
+   ('preview' 49000 79000)
+   (
+      'rank'
+      ('drum' 151)
+      ('guitar' 139)
+      ('bass' 135)
+      ('vocals' 353)
+      ('keys' 0)
+      ('real_keys' 0)
+      ('band' 243)
+   )
+   ('genre' 'indierock')
+   ('vocal_gender' 'female')
+   ('version' 30)
+   ('format' 10)
+   ('album_art' 1)
+   ('year_released' 2004)
+   ('rating' 1)
+   ('sub_genre' 'subgenre_indierock')
+   ('song_id' 1798000046)
+   ('tuning_offset_cents' 0)
+   ('guide_pitch_volume' -3.00)
+   ('game_origin' 'ugc_plus')
+   ('encoding' 'latin1')
+   (
+      'album_name'
+      "Kiss & Tell"
+   )
+   ('album_track_number' 2)
+   (vocal_tonic_note 10)
+   (song_tonality 0)
+
+;DO NOT EDIT THE FOLLOWING LINES MANUALLY
+;Created using Magma: C3 Roks Edition v3.3.5
+;Song authored by Deevun155
+;Song=Hot Night Crash
+;Language(s)=English,
+;Karaoke=0
+;Multitrack=0
+;Convert=0
+;2xBass=0
+;RhythmKeys=0
+;RhythmBass=0
+;CATemh=0
+;ExpertOnly=0
+)

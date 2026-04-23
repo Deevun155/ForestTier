@@ -1,0 +1,137 @@
+(
+   'aha_huntinghighandlowST_r'
+   (
+      'name'
+      "Hunting High and Low (Remix)"
+   )
+   (
+      'artist'
+      "a-ha"
+   )
+   ('master' 1)
+   (
+      'song'
+      (
+         'name'
+         "songs/aha_huntinghighandlowst/aha_huntinghighandlowst"
+      )
+      (
+         'tracks_count'
+         (2 1 1 1 1 2)
+      )
+      (
+         'tracks'
+         (
+            (
+               'drum'
+               (0 1)
+            )
+            (
+               'bass'
+               (2)
+            )
+            (
+               'guitar'
+               (3)
+            )
+            (
+               'vocals'
+               (4)
+            )
+            (
+               'keys'
+               (5)
+            )
+         )
+      )
+      (
+         'pans'
+         (-1.00 1.00 0.00 0.00 0.00 0.00 -1.00 1.00)
+      )
+      (
+         'vols'
+         (0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00)
+      )
+      (
+         'cores'
+         (-1 -1 -1 -1 -1 -1 -1 -1)
+      )
+      ('vocal_parts' 3)
+      (
+         'drum_solo'
+         (
+            'seqs'
+            ('kick.cue' 'snare.cue' 'tom1.cue' 'tom2.cue' 'crash.cue')
+         )
+      )
+      (
+         'drum_freestyle'
+         (
+            'seqs'
+            ('kick.cue' 'snare.cue' 'hat.cue' 'ride.cue' 'crash.cue')
+         )
+      )
+      (mute_volume -15)
+      (mute_volume_vocals -12)
+      (hopo_threshold 170)
+   )
+   ('song_scroll_speed' 2300)
+   (
+      'bank'
+      "sfx/tambourine_bank.milo"
+   )
+   (drum_bank sfx/kit02_bank.milo)
+   ('anim_tempo' 32)
+   ('song_length' 232583)
+   ('preview' 27000 95000)
+   (
+      'rank'
+   ('drum' 151)
+   ('guitar' 258)
+   ('bass' 56)
+   ('vocals' 408)
+   ('keys' 56)
+   ('real_keys' 178)
+   ('band' 236)
+   )
+   ('genre' 'new_wave')
+   ('vocal_gender' 'male')
+   ('version' 30)
+   ('format' 10)
+   ('album_art' 1)
+   ('year_released' 1985)
+   ('rating' 1)
+   ('sub_genre' 'subgenre_new_wave')
+   ('song_id' 2137192050)
+   (solo (keys))
+   ('tuning_offset_cents' 27)
+   ('guide_pitch_volume' -3.00)
+   ('game_origin' 'ugc_plus')
+   (band_fail_cue band_fail_rock_keys.cue)
+   ('encoding' 'latin1')
+   (
+      'album_name'
+      "Hunting High and Low"
+   )
+   ('album_track_number' 3)
+   (author "Deevun155")
+   (vocal_tonic_note 9)
+   (song_tonality 0)
+
+;DO NOT EDIT THE FOLLOWING LINES MANUALLY
+;Created using Magma: Rok On Edition v4.0.3
+;Song authored by Deevun155
+;Song=Hunting High and Low (Remix)
+;Language(s)=English,
+;Karaoke=0
+;Multitrack=0
+;DIYStems=0
+;PartialMultitrack=0
+;UnpitchedVocals=0
+;Convert=0
+;2xBass=0
+;RhythmKeys=0
+;RhythmBass=0
+;CATemh=0
+;ExpertOnly=0
+)
