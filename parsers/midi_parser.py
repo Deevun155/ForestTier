@@ -218,7 +218,7 @@ def extract_midi_features(
 ) -> Dict[str, float]:
 	try:
 		mid = mido.MidiFile(midi_path)
-	except OSError:
+	except (OSError, ValueError):
 		# Some files contain out-of-range bytes; retry with clipping.
 		mid = mido.MidiFile(midi_path, clip=True)
 	note_events, force_on_count, force_off_count, ticks_per_beat = _build_note_events(mid, track_name)

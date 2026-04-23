@@ -15,7 +15,8 @@ def get_guitar_difficulty(dta_path):
             match = re.search(r"\(\s*'?guitar'?\s+(\d+)\s*\)", content, re.IGNORECASE)
             
             if match:
-                return int(match.group(1))
+                difficulty = int(match.group(1))
+                return None if difficulty == 0 else difficulty
             else:
                 return None # Song might not have a guitar part charted
     except Exception as e:
