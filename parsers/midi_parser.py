@@ -108,6 +108,8 @@ def _build_note_events(
 		abs_tick += msg.time
 		if msg.is_meta:
 			continue
+		if msg.type not in ("note_on", "note_off"):
+			continue
 		note = msg.note
 		is_note_on = msg.type == "note_on" and msg.velocity > 0
 		is_note_off = msg.type == "note_off" or (msg.type == "note_on" and msg.velocity == 0)
