@@ -14,6 +14,8 @@ EXPERT_GUITAR_MIN = 96
 EXPERT_GUITAR_MAX = 100
 FORCE_HOPO_ON = 101
 FORCE_HOPO_OFF = 102
+BRE_MARKER_MIN = 120
+BRE_MARKER_MAX = 124
 
 
 @dataclass
@@ -99,6 +101,8 @@ def _build_note_events(
 	note_events: Dict[int, set] = {}
 	marker_starts: Dict[int, int] = {}
 	marker_ranges: List[Tuple[int, int, bool]] = []
+	bre_marker_starts: Dict[int, int] = {}
+	bre_ranges: List[Tuple[int, int]] = []
 
 	abs_tick = 0
 	force_on_count = 0
@@ -123,16 +127,24 @@ def _build_note_events(
 			elif note == FORCE_HOPO_OFF:
 				marker_starts[note] = abs_tick
 				force_off_count += 1
+			elif BRE_MARKER_MIN <= note <= BRE_MARKER_MAX:
+				bre_marker_starts[note] = abs_tick
 		elif is_note_off:
 			if note in (FORCE_HOPO_ON, FORCE_HOPO_OFF) and note in marker_starts:
 				start_tick = marker_starts.pop(note)
 				marker_ranges.append((start_tick, abs_tick, note == FORCE_HOPO_ON))
+			elif BRE_MARKER_MIN <= note <= BRE_MARKER_MAX and note in bre_marker_starts:
+				start_tick = bre_marker_starts.pop(note)
+				bre_ranges.append((start_tick, abs_tick))
 
 	final_tick = abs_tick
 	for note, start_tick in marker_starts.items():
 		marker_ranges.append((start_tick, final_tick, note == FORCE_HOPO_ON))
+	for note, start_tick in bre_marker_starts.items():
+		bre_ranges.append((start_tick, final_tick))
 
 	marker_ranges.sort(key=lambda item: item[0])
+	bre_ranges.sort(key=lambda item: item[0])
 
 	if not note_events:
 		return [], force_on_count, force_off_count, ticks_per_beat
@@ -148,8 +160,16 @@ def _build_note_events(
 				forced_value = forced
 		return forced_value
 
+	def is_bre_tick(tick: int) -> bool:
+		for start_tick, end_tick in bre_ranges:
+			if start_tick <= tick <= end_tick:
+				return True
+		return False
+
 	note_event_list: List[NoteEvent] = []
 	for tick in sorted(note_events.keys()):
+		if is_bre_tick(tick):
+			continue
 		lanes = tuple(sorted(note_events[tick]))
 		force_hopo = resolve_force_hopo(tick)
 		note_event_list.append(
