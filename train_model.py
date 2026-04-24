@@ -109,7 +109,7 @@ def train_models(
 def main() -> None:
 	parser = argparse.ArgumentParser(description="Train baseline and RF models on RB3 dataset.")
 	parser.add_argument("--csv", default="hmx_dataset.csv", help="Path to dataset CSV")
-	parser.add_argument("--sample-fraction", type=float, default=0.25, help="Fraction of rows to use")
+	parser.add_argument("--sample-fraction", type=float, default=1, help="Fraction of rows to use")
 	parser.add_argument("--random-state", type=int, default=42, help="Random seed")
 	parser.add_argument("--output-predictions", help="Write test predictions to CSV")
 	parser.add_argument("--verbose", action="store_true", help="Enable verbose logging")
