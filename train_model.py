@@ -45,21 +45,32 @@ def train_models(
 	baseline_feature: str,
 	model_features: list[str],
 	random_state: int,
+	output_predictions: Path | None,
 	) -> None:
 	missing = [col for col in model_features + [baseline_feature, "difficulty"] if col not in df.columns]
 	if missing:
 		raise ValueError(f"Missing columns in dataset: {missing}")
+	if output_predictions and "song_id" not in df.columns:
+		raise ValueError("song_id column is required to export predictions")
 
 	X_baseline = df[[baseline_feature]]
 	X_full = df[model_features]
 	y = df["difficulty"]
+	ids = df["song_id"] if "song_id" in df.columns else None
 
-	X_train_full, X_test_full, y_train, y_test = train_test_split(
-		X_full,
-		y,
+	split_items = [X_full, y]
+	if ids is not None:
+		split_items.append(ids)
+	train_test = train_test_split(
+		*split_items,
 		test_size=0.2,
 		random_state=random_state,
 	)
+	X_train_full = train_test[0]
+	X_test_full = train_test[1]
+	y_train = train_test[2]
+	y_test = train_test[3]
+	ids_test = train_test[5] if ids is not None else None
 	X_train_base = X_train_full[[baseline_feature]]
 	X_test_base = X_test_full[[baseline_feature]]
 
@@ -82,12 +93,25 @@ def train_models(
 	LOGGER.info("Baseline MAE: %.4f", baseline_mae)
 	LOGGER.info("RandomForest MAE: %.4f", rf_mae)
 
+	if output_predictions:
+		predictions = pd.DataFrame(
+			{
+				"song_id": ids_test,
+				"actual": y_test,
+				"baseline_pred": baseline_pred,
+				"rf_pred": rf_pred,
+			}
+		)
+		predictions.to_csv(output_predictions, index=False)
+		LOGGER.info("Wrote predictions to %s", output_predictions)
+
 
 def main() -> None:
 	parser = argparse.ArgumentParser(description="Train baseline and RF models on RB3 dataset.")
 	parser.add_argument("--csv", default="hmx_dataset.csv", help="Path to dataset CSV")
 	parser.add_argument("--sample-fraction", type=float, default=0.25, help="Fraction of rows to use")
 	parser.add_argument("--random-state", type=int, default=42, help="Random seed")
+	parser.add_argument("--output-predictions", help="Write test predictions to CSV")
 	parser.add_argument("--verbose", action="store_true", help="Enable verbose logging")
 	args = parser.parse_args()
 
@@ -96,11 +120,13 @@ def main() -> None:
 
 	_configure_logging(args.verbose)
 	data = _load_dataset(Path(args.csv), args.sample_fraction, args.random_state)
+	predictions_path = Path(args.output_predictions) if args.output_predictions else None
 	train_models(
 		df=data,
 		baseline_feature="peak_fret_changes_per_sec",
 		model_features=FEATURE_COLUMNS,
 		random_state=args.random_state,
+		output_predictions=predictions_path,
 	)
 
 
