@@ -36,24 +36,34 @@ for ax, feature in zip(axes, features):
         ax.axis("off")
         continue
 
+    x_vals = plot_df[feature].to_numpy()
+    y_vals = plot_df["difficulty"].to_numpy()
+
+    # Highlight isolated points using k-nearest neighbor distance in normalized space.
+    if len(x_vals) >= 6:
+        x_norm = (x_vals - x_vals.mean()) / (x_vals.std() or 1.0)
+        y_norm = (y_vals - y_vals.mean()) / (y_vals.std() or 1.0)
+        points = np.column_stack([x_norm, y_norm])
+        dists = np.sqrt(((points[:, None, :] - points[None, :, :]) ** 2).sum(axis=2))
+        np.fill_diagonal(dists, np.inf)
+        k = 5
+        knn = np.sort(dists, axis=1)[:, :k]
+        isolation_score = knn.mean(axis=1)
+        isolated_idx = np.argsort(isolation_score)[-10:]
+    else:
+        isolated_idx = np.array([], dtype=int)
+
     sns.regplot(
         data=plot_df,
         x=feature,
         y="difficulty",
-        scatter_kws={"s": 8},
+        scatter_kws={"s": 8, "alpha": 0.7},
         line_kws={"color": "red"},
         ax=ax,
     )
-    ax.set_title(f"{feature} vs difficulty")
 
-    x_vals = plot_df[feature].to_numpy()
-    y_vals = plot_df["difficulty"].to_numpy()
-    if len(x_vals) >= 2:
-        slope, intercept = np.polyfit(x_vals, y_vals, 1)
-        preds = slope * x_vals + intercept
-        residuals = np.abs(y_vals - preds)
-        top_idx = np.argsort(residuals)[-10:]
-        for idx in top_idx:
+    if isolated_idx.size:
+        for idx in isolated_idx:
             ax.annotate(
                 plot_df.iloc[idx]["song_id"],
                 (x_vals[idx], y_vals[idx]),
@@ -61,6 +71,8 @@ for ax, feature in zip(axes, features):
                 xytext=(4, 4),
                 fontsize=7,
             )
+
+    ax.set_title(f"{feature} vs difficulty")
 
 for ax in axes[len(features):]:
     ax.axis("off")
