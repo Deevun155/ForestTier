@@ -13,7 +13,7 @@ def get_guitar_difficulty(dta_path):
             # Regex to find the pattern inside the rank block: (rank (guitar 234) ...)
             # The \d+ captures the 1-605 integer
             match = re.search(
-                r"\(\s*rank\b[^)]*\).*?\(\s*'?guitar'?\s+(\d+)\s*\)",
+                r"\(\s*'?rank'?\b[^)]*\).*?\(\s*'?guitar'?\s+(\d+)\s*\)",
                 content,
                 re.IGNORECASE | re.DOTALL,
             )
