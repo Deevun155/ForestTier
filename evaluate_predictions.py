@@ -2,7 +2,9 @@ import argparse
 import logging
 from pathlib import Path
 
+import matplotlib.pyplot as plt
 import pandas as pd
+import joblib
 from scipy import stats
 from sklearn.metrics import mean_absolute_error
 
@@ -17,7 +19,7 @@ def _configure_logging(verbose: bool) -> None:
     )
 
 
-def evaluate_predictions(csv_path: Path) -> None:
+def evaluate_predictions(csv_path: Path, model_path: Path | None) -> None:
     if not csv_path.exists():
         raise FileNotFoundError(f"CSV not found at {csv_path}")
 
@@ -42,15 +44,47 @@ def evaluate_predictions(csv_path: Path) -> None:
     LOGGER.info("Paired t-test: t=%.4f p=%.6f", t_stat, t_p)
     LOGGER.info("Wilcoxon: statistic=%.4f p=%.6f", w_stat, w_p)
 
+    if model_path:
+        if not model_path.exists():
+            raise FileNotFoundError(f"Model not found at {model_path}")
+        model = joblib.load(model_path)
+        if not hasattr(model, "feature_importances_"):
+            raise ValueError("Model does not expose feature_importances_")
+
+        importances = model.feature_importances_
+        feature_names = [
+            "total_active_time",
+            "avg_nps",
+            "peak_nps",
+            "avg_strums_per_sec",
+            "peak_strums_per_sec",
+            "avg_fret_changes_per_sec",
+            "peak_fret_changes_per_sec",
+        ]
+
+        order = importances.argsort()[::-1]
+        plt.figure(figsize=(8, 4))
+        plt.bar(
+            [feature_names[idx] for idx in order],
+            importances[order],
+        )
+        plt.title("RandomForest Feature Importance")
+        plt.ylabel("Importance")
+        plt.xticks(rotation=30, ha="right")
+        plt.tight_layout()
+        plt.show()
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Evaluate predictions CSV without retraining.")
     parser.add_argument("--csv", default="test_predictions.csv", help="Path to predictions CSV")
+    parser.add_argument("--model", default="rf_model.joblib", help="Path to trained model for feature importance")
     parser.add_argument("--verbose", action="store_true", help="Enable verbose logging")
     args = parser.parse_args()
 
     _configure_logging(args.verbose)
-    evaluate_predictions(Path(args.csv))
+    model_path = Path(args.model) if args.model else None
+    evaluate_predictions(Path(args.csv), model_path)
 
 
 if __name__ == "__main__":
