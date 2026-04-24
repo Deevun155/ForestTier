@@ -10,9 +10,13 @@ def get_guitar_difficulty(dta_path):
         with open(dta_path, 'r', encoding='utf-8', errors='ignore') as file:
             content = file.read()
             
-            # Regex to find the pattern: (guitar 234)
+            # Regex to find the pattern inside the rank block: (rank (guitar 234) ...)
             # The \d+ captures the 1-605 integer
-            match = re.search(r"\(\s*'?guitar'?\s+(\d+)\s*\)", content, re.IGNORECASE)
+            match = re.search(
+                r"\(\s*rank\b[^)]*\).*?\(\s*'?guitar'?\s+(\d+)\s*\)",
+                content,
+                re.IGNORECASE | re.DOTALL,
+            )
             
             if match:
                 difficulty = int(match.group(1))
