@@ -3,6 +3,7 @@ import logging
 from pathlib import Path
 
 import pandas as pd
+import joblib
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error
@@ -46,6 +47,7 @@ def train_models(
 	model_features: list[str],
 	random_state: int,
 	output_predictions: Path | None,
+	model_output: Path | None,
 	) -> None:
 	missing = [col for col in model_features + [baseline_feature, "difficulty"] if col not in df.columns]
 	if missing:
@@ -92,6 +94,9 @@ def train_models(
 	LOGGER.info("Baseline feature: %s", baseline_feature)
 	LOGGER.info("Baseline MAE: %.4f", baseline_mae)
 	LOGGER.info("RandomForest MAE: %.4f", rf_mae)
+	if model_output:
+		joblib.dump(rf, model_output)
+		LOGGER.info("Saved model to %s", model_output)
 
 	if output_predictions:
 		predictions = pd.DataFrame(
@@ -112,6 +117,7 @@ def main() -> None:
 	parser.add_argument("--sample-fraction", type=float, default=1, help="Fraction of rows to use")
 	parser.add_argument("--random-state", type=int, default=42, help="Random seed")
 	parser.add_argument("--output-predictions", help="Write test predictions to CSV")
+	parser.add_argument("--model-output", default="rf_model.joblib", help="Path to save trained model")
 	parser.add_argument("--verbose", action="store_true", help="Enable verbose logging")
 	args = parser.parse_args()
 
@@ -121,12 +127,14 @@ def main() -> None:
 	_configure_logging(args.verbose)
 	data = _load_dataset(Path(args.csv), args.sample_fraction, args.random_state)
 	predictions_path = Path(args.output_predictions) if args.output_predictions else None
+	model_path = Path(args.model_output) if args.model_output else None
 	train_models(
 		df=data,
 		baseline_feature="peak_fret_changes_per_sec",
 		model_features=FEATURE_COLUMNS,
 		random_state=args.random_state,
 		output_predictions=predictions_path,
+		model_output=model_path,
 	)
 
 
