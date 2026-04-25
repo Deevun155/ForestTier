@@ -4,7 +4,7 @@ An intelligent software engineering tool that uses a Random Forest Regressor to 
 
 ### Usage
 
-This model only works on PART GUITAR. To see how to use it, see `manual.pdf`.
+This model only works on PART GUITAR. For instructions, see `manual.pdf`.
 
 ### Building
 
