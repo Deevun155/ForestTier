@@ -13,3 +13,6 @@ Thumbs.db
 venv/
 .venv/
 env/
+
+# Ignore Word docs used to create the pdfs
+*.docx
