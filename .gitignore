@@ -11,4 +11,5 @@ Thumbs.db
 
 # Ignore virtual environments (unused for now)
 venv/
+.venv/
 env/
