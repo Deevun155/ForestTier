@@ -40,6 +40,7 @@ for ax, feature in zip(axes, features):
     y_vals = plot_df["difficulty"].to_numpy()
 
     # Highlight isolated points using k-nearest neighbor distance in normalized space.
+    """
     if len(x_vals) >= 6:
         x_norm = (x_vals - x_vals.mean()) / (x_vals.std() or 1.0)
         y_norm = (y_vals - y_vals.mean()) / (y_vals.std() or 1.0)
@@ -52,7 +53,8 @@ for ax, feature in zip(axes, features):
         isolated_idx = np.argsort(isolation_score)[-10:]
     else:
         isolated_idx = np.array([], dtype=int)
-
+    """
+        
     sns.regplot(
         data=plot_df,
         x=feature,
@@ -61,8 +63,9 @@ for ax, feature in zip(axes, features):
         line_kws={"color": "red"},
         ax=ax,
     )
+    
 
-    if isolated_idx.size:
+    """if isolated_idx.size:
         for idx in isolated_idx:
             ax.annotate(
                 plot_df.iloc[idx]["song_id"],
@@ -70,7 +73,7 @@ for ax, feature in zip(axes, features):
                 textcoords="offset points",
                 xytext=(4, 4),
                 fontsize=7,
-            )
+            )"""
 
     ax.set_title(f"{feature} vs difficulty")
 
